@@ -15,7 +15,12 @@ if(StoredData.includes(nval)){
     userName.innerHTML=`${nval}`;
     nameHolder.style.border="2px solid green";
 
-}else{
+}else if(nval==0){
+    nameHolder.style.border="2px solid red";
+
+    return 0;
+}
+else{
     console.log("No Match Found!!!");
     userName.innerHTML="No Match Found!!!";
     nameHolder.style.border="2px solid red";
@@ -44,11 +49,10 @@ function checkPassword(val) {
         submitBtn.style.border="2px solid green";
         userInput.style.border="2px solid green";
        
-    }
-  //  else if{
-    //    userInput.value=0;
-      //  return ;
-   //}
+    }else if(userInput.value==0){
+        userInput.style.border="2px solid red"
+      return 0;
+   }
     else {
         console.log("Access denied! Incorrect password.");
         consol.innerHTML="Access denied!";
